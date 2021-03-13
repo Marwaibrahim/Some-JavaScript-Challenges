@@ -36,9 +36,7 @@ function rpsGame(yourChoice){
   var humenChoice, bootChoice;
   humenChoice = yourChoice.id;
   bootChoice = numberToChoice(randToRpsInt());
-  console.log('computer choice:', bootChoice)
   result = decideWinner(humenChoice, bootChoice);
-  console.log(result);
   message = finalMessage(result);
   rpsFrontEnd(yourChoice.id, bootChoice, message);
 }
@@ -105,4 +103,70 @@ function rpsFrontEnd(humanImageChoice, bootImageChoice, finalMessage){
     document.getElementById('flex-box-rps-div').appendChild(bootDiv);
 
 
+}
+
+
+
+/////////Challenge 4
+
+var allButtons = document.getElementsByTagName('button');
+// console.log(allButtons);
+//////////first we need to remember the original colors of all buttons
+var copyAllButtons = [];
+for (let i = 0; i<allButtons.length; i++){
+    copyAllButtons.push(allButtons[i]);
+}
+console.log(copyAllButtons[0].classList.value);
+//copyAllButtons[0].classList.remove('btn-primary');
+
+///////////Second we need to remove all colors 
+function buttonColorChange(buttonThingy){
+
+    if(buttonThingy.value === 'red'){
+        buttonRed();
+    }
+    else if(buttonThingy.value === 'green'){
+        buttonGreen();
+    }
+    else if(buttonThingy.value === 'reset'){
+        buttonReset();
+    }
+    else if(buttonThingy.value === 'random'){
+        buttonRandom();
+    }
+
+}
+
+function buttonRed(){
+    for(let i=0; i< allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-danger')
+        // allButtons[i].classList.value = 'btn btn-danger';
+    }
+}
+
+function buttonGreen(){
+     for(let i=0; i< allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-success')
+        // allButtons[i].classList.value = 'btn btn-success';
+    }
+}
+
+function buttonReset(){
+    for(let i=0; i< allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(copyAllButtons[i]);
+        // allButtons[i].classList.value = copyAllButtons[i].classList.value;
+    }
+}
+
+function buttonRandom(){
+    var choices = ['btn-primary', 'btn-danger', 'btn-success', 'btn-warning']
+    for(let i = 0; i<allButtons.length; i++){
+        var randomNumber = Math.floor(Math.random() * 4);
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(choices[randomNumber]);
+    }
+    
 }
