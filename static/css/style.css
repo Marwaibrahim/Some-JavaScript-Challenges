@@ -6,7 +6,7 @@
 
 }
 
-.flex-box-container-1 , .flex-box-container-2, .flex-box-rps , .flex-box-pick-color{
+.flex-box-container-1 , .flex-box-container-2, .flex-box-rps , .flex-box-pick-color, .flex-blackjack-row-1, .flex-blackjack-row-2, .flex-blackjack-row-3{
     display: flex;
     border: 1px solid black;
     padding: 10px;
@@ -17,9 +17,43 @@
 .flex-box-container-1 div {
     display: flex;
     padding: 10px;
+    border: 1px solid black; 
     align-items: center;
 }
 
+.flex-blackjack-row-1 div{
+    border: 1px solid black; 
+    padding: 10px;
+    height: 350px;
+    flex: 1;
+    text-align: center;
+}
+
+.flex-blackjack-row-1 img{
+    width: 15%;
+    padding: 10px;
+}
+
+.flex-blackjack-row-1, .flex-blackjack-row-2{
+    background: url('https://ie2-gfebf.cdnppb.net/mexchangeblackjack/turbo/17/assets/gameView/tableBackground.png?v17') center;
+    color: #ffffff;
+}
+
+
+.flex-blackjack-row-2 div{
+    border: 1px solid black; 
+    padding: 10px;
+}
+
+table, th, td{
+    border: 1px solid black; 
+    padding: 5px;
+}
+
+.flex-blackjack-row-2 button{
+    border: 1px solid black; 
+    padding: 10px;
+}
 /* .container-2{
     border: 1px solid black; 
     width: 75%;
